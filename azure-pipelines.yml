@@ -13,6 +13,9 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'x64'
   buildConfiguration: 'Release'
+  Build.BinariesDirectory: 'Solver/bin'
+  Build.BuildId: Solver_1.0
+  Build.ArifactStagingDirectoy: 'Solver'
 
 steps:
 - task: NuGetToolInstaller@1
