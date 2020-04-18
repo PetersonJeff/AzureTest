@@ -15,7 +15,6 @@ variables:
   buildPlatform: 'x64'
   buildConfiguration: 'Release'
   Build.BinariesDirectory: 'Solver/bin'
-  Build.BuildId: Solver_1.0
   Build.ArifactStagingDirectoy: 'Solver'
   system.debug: true
 
@@ -37,6 +36,7 @@ steps:
     SourceFolder: 'Solver/x64/Release'
     Contents: '*.exe'
     TargetFolder: 'Solver/bin'
+
 - task: VSTest@2
   inputs:
     platform: '$(buildPlatform)'
@@ -47,6 +47,7 @@ steps:
   inputs:
     rootFolderOrFile: '$(Build.BinariesDirectory)'
     includeRootFolder: true
+    verbose: true
     archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/Solver-$(Build.BuildId).zip'
     replaceExistingArchive: true
