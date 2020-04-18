@@ -40,4 +40,6 @@ Debug/
 *.iobj
 *.ipdb
 *.user
+*.obj
+
 
