@@ -51,3 +51,10 @@ steps:
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/Solver-$(Build.BuildId).zip'
     replaceExistingArchive: true
+
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'Solver-$(Build.BuildId).zip'
+    publishLocation: 'Container'
